@@ -16,5 +16,5 @@
             "Crontab\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
