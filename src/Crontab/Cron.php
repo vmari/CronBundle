@@ -4,6 +4,6 @@ namespace Crontab;
 
 class Cron {
     function test(){
-        return 0;
+        return 'string';
     }
 }
