@@ -13,14 +13,12 @@
             "email": "valentinmari@hotmail.com"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "Crontab\\": "src/Crontab/"
+    "autoload" : {
+        "psr-0" : {
+            "Crontab\\CrontabBundle" : ""
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.2.x-dev"
-        }
-    }
+    "target-dir" : "Crontab/CrontabBundle",
+    "repositories" : [{
+    }]
 }
