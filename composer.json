@@ -2,7 +2,7 @@
     "name": "valentinmari/php-crontab",
     "description": "Manage dynamically crons with requests in your PHP site.",
     "keywords": ["crontab", "cron"],
-    "type": "library",
+    "type": "symfony-bundle",
     "require": {
         "symfony/symfony": "~2.6"
     },
