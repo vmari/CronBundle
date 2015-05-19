@@ -1,5 +1,5 @@
 {
-    "name": "valentinmari/php-crontab",
+    "name": "valentinmari/crontab-bundle",
     "description": "Manage dynamically crons with requests in your PHP site.",
     "keywords": ["crontab", "cron"],
     "type": "symfony-bundle",
