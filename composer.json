@@ -17,6 +17,5 @@
         "psr-4": {
             "Crontab\\": "src/"
         }
-    },
-    "minimum-stability": "dev"
+    }
 }
