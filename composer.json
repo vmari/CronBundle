@@ -1,0 +1,15 @@
+{
+    "name": "valentinmari/php-crontab",
+    "description": "Manage dynamically crons with requests in your PHP site.",
+    "require": {
+        "symfony/symfony": "~2.6"
+    },
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Valentin Mari",
+            "email": "valentinmari@hotmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
