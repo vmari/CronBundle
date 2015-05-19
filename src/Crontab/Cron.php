@@ -1,5 +1,7 @@
 <?php
 
-function Tomas(){
-    echo "Valentin";
+class Cron {
+    function test(){
+        return 0;
+    }
 }
