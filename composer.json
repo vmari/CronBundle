@@ -15,7 +15,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Crontab\\": "src/"
+            "Crontab\\": "src/Crontab/"
         }
     },
     "extra": {
