@@ -4,12 +4,17 @@
     "require": {
         "symfony/symfony": "~2.6"
     },
-    "license": "GPLv2",
+    "license": "GPL-2.0",
     "authors": [
         {
             "name": "Valentin Mari",
             "email": "valentinmari@hotmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Crontab\\": "src/"
+        }
+    },
     "minimum-stability": "stable"
 }
