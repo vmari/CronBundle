@@ -14,8 +14,8 @@
         }
     ],
     "autoload" : {
-        "psr-0" : {
-            "Crontab\\" : ""
+        "psr-4" : {
+            "Crontab\\CrontabBundle\\" : ""
         }
     },
     "repositories" : [{
