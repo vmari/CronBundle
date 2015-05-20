@@ -15,10 +15,9 @@
     ],
     "autoload" : {
         "psr-0" : {
-            "Crontab\\CrontabBundle\\" : ""
+            "CrontabBundle\\CrontabBundle\\" : ""
         }
     },
-    "target-dir" : "Crontab/CrontabBundle",
     "repositories" : [{
     }]
 }

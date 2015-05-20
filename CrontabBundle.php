@@ -1,6 +1,6 @@
 <?php
 
-namespace Crontab;
+namespace CrontabBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class CrontabBundle extends Bundle {
