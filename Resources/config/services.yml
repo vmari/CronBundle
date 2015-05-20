@@ -1,0 +1,5 @@
+services:
+    listener.request:
+        class: Crontab\EventListener\RequestListener
+        tags:
+           - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
