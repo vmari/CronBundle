@@ -1,38 +1,45 @@
-# PHP-Crontab
-Manage dinamic crons with requests in your PHP site.
+## Installation
 
+1. Download CrontabBundle using composer
+2. Enable the Bundle
+3. Configure your application's events
+4. Configure the CrontabBundle
+5. Update your database schema
 
+### Step 1: Download CrontabBundle using composer
 
-To use:
+Add CrontabBundle by running the command:
 
-* Require with composer
-```json 
-"repositories": [
-    {
-        "name": "valentinmari/crontab-bundle",
-        "type": "vcs",
-        "url": "https://github.com/valentinmari/CrontabBundle"
-    }
-],
-"require": {
-    "valentinmari/crontab-bundle": "dev-master"
+``` bash
+$ php composer.phar require valentinmari/crontab-bundle "dev-master"
+```
+
+Composer will install the bundle to your project's `vendor/valentinmari` directory.
+
+### Step 2: Enable the bundle
+
+Enable the bundle in the kernel:
+
+``` php
+<?php
+// app/AppKernel.php
+
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new Crontab\CrontabBundle(),
+    );
 }
 ```
 
-* Update your project
-```bash
-composer update
-```
-    
-* Register Bundle in AppKernel.php
-```php
-$bundles = array(
-    /* (...) */
-    new Crontab\CrontabBundle(),
-);
-```
+### Step 5: Update your database schema
 
-* Update your schema with 
-```bash
-php app/console doctrine:schema:update --force
+Now that the bundle is configured, the last thing you need to do is update your
+database schema because you have added a new entity, the `Cron` class.
+
+Run the following command.
+
+``` bash
+$ php app/console doctrine:schema:update --force
 ```
