@@ -2,9 +2,7 @@
 
 1. Download CrontabBundle using composer
 2. Enable the Bundle
-3. Configure your application's events
-4. Configure the CrontabBundle
-5. Update your database schema
+3. Update your database schema
 
 ### Step 1: Download CrontabBundle using composer
 
@@ -33,7 +31,7 @@ public function registerBundles()
 }
 ```
 
-### Step 5: Update your database schema
+### Step 3: Update your database schema
 
 Now that the bundle is configured, the last thing you need to do is update your
 database schema because you have added a new entity, the `Cron` class.
