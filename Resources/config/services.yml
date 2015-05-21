@@ -1,5 +1,6 @@
 services:
     listener.request:
         class: Crontab\EventListener\RequestListener
+        arguments: [ @doctrine.orm.entity_manager ]
         tags:
            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
