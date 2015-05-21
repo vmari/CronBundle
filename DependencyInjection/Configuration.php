@@ -16,7 +16,7 @@ class Configuration implements ConfigurationInterface
             ->prototype('array')
                 ->children()
                     ->scalarNode('format')->end()
-                    ->scalarNode('command')->end()
+                    ->scalarNode('service')->end()
                 ->end()
             ->end()
         ;

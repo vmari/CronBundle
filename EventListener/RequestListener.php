@@ -18,6 +18,11 @@ class RequestListener{
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();
-        $event->setResponse(new Response('<pre>'.print_r($this->container->getParameter('crontab'),1)));
+        
+        $crons = $this->container->getParameter('crontab');
+        
+        $service = $crons[0]['service'];
+        
+        $event->setResponse(new Response($this->container->get($service)->run()));
     }
 }
