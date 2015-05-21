@@ -6,6 +6,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManager;
+use Crontab\Parser;
 
 class RequestListener{
 
@@ -15,14 +16,22 @@ class RequestListener{
         $this->container = $container;
     }
     
-    public function onKernelRequest(GetResponseEvent $event)
-    {
-        $request = $event->getRequest();
-        
+    public function onKernelRequest(GetResponseEvent $event){        
         $crons = $this->container->getParameter('crontab');
+        if(!count($crons)) return;
+        //TODO: cron.lock
         
-        $service = $crons[0]['service'];
         
-        $event->setResponse(new Response($this->container->get($service)->run()));
+        $response = '';
+        
+        foreach( $crons as $cron ){
+            //TODO: analize cron to determine if must be executed
+            
+            $timestamp = Parser::parse($cron['format']);
+            
+            if($mustExecute)
+                $this->container->get($cron['service'])->run();
+        }
+        $event->setResponse(new Response($response));
     }
 }
