@@ -2,21 +2,22 @@
 
 namespace Crontab\EventListener;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManager;
 
 class RequestListener{
-    protected $em;
 
-    public function __construct(EntityManager $em){
-        $this->em = $em;
+    protected $container;
+
+    public function __construct(ContainerInterface $container){
+        $this->container = $container;
     }
     
     public function onKernelRequest(GetResponseEvent $event)
     {
         $request = $event->getRequest();
-        $crons = $this->em->getRepository('CrontabBundle:Cron')->findAll();
-        //$event->setResponse(new Response('<pre>'.print_r($crons,1)));
+        $event->setResponse(new Response('<pre>'.print_r($this->container->getParameter('crontab'),1)));
     }
 }
