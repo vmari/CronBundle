@@ -9,6 +9,6 @@ class RequestListener{
    public function onKernelRequest(GetResponseEvent $event)
    {
        $request = $event->getRequest();
-       $event->setResponse(new Response("snif"));
+       //Cron.
    }
 }
