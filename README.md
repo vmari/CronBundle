@@ -1,4 +1,4 @@
-# WIP - <<<This project don't have any stable version yet.>>>
+# WIP - This project don't have any stable version yet.
 
 ## Installation
 
