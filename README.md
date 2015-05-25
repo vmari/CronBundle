@@ -1,3 +1,5 @@
+# WIP - <<<This project don't have any stable version yet.>>>
+
 ## Installation
 
 1. Download CrontabBundle using composer
