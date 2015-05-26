@@ -19,19 +19,16 @@ class RequestListener{
     public function onKernelRequest(GetResponseEvent $event){        
         $crons = $this->container->getParameter('crontab');
         if(!count($crons)) return;
-        //TODO: cron.lock
-        
-        
-        $response = '';
+        //TODO: cron.lock every minute
         
         foreach( $crons as $cron ){
             //TODO: analize cron to determine if must be executed
             
             $timestamp = Parser::parse($cron['format']);
             
-            if($mustExecute)
+            //if($mustExecute)
                 $this->container->get($cron['service'])->run();
         }
-        $event->setResponse(new Response($response));
+        //$event->setResponse(new Response($response));
     }
 }
