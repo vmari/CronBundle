@@ -1,11 +1,11 @@
 services:
     cron.listener.request:
-        class: Cron\EventListener\RequestListener
+        class: CronBundle\EventListener\RequestListener
         arguments: [ @service_container ]
         tags:
            - { name: kernel.event_listener, event: kernel.request, method: onKernelRequest }
 
     cron.cache.clearer:
-        class: Cron\Cache\ClearCache
+        class: CronBundle\Cache\ClearCache
         tags:
             - { name: kernel.cache_clearer }
