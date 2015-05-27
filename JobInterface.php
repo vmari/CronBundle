@@ -2,6 +2,6 @@
 
 namespace Crontab;
 
-interface JobServiceInterface{
+interface JobInterface{
     public function run();
 }

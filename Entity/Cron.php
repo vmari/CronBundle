@@ -55,13 +55,6 @@ class Cron{
 
     public function run(){
         $now = new \DateTime('now');
-
-        dump(array(
-            'now'=> $now,
-            'nextRun'=>$this->nextRun(),
-            'lastRun'=>$this->getLastRun(),
-            'format'=>$this->format
-        ));
         if( $this->nextRun() <= $now ){
 
             $this->container->get($this->service)->run();

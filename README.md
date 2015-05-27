@@ -53,15 +53,16 @@ crontab:
 ```
 
 The format is like Cron, from Unix. You must define a service, this service must
-implement `JobServiceInterface` and redefine the run() method.
-Inside run() you can put your Job and do anything you want.
+implement `JobInterface` and redefine the run() method.
+Inside run() you can put your Job and do anything you want. You can inject things
+in your service too.
 
 ```php
 // AppBundle/Services/YourJob.php
 namespace AppBundle\Services;
-use Crontab\JobServiceInterface;
+use Crontab\JobInterface;
 
-class YourJob implements JobServiceInterface{
+class YourJob implements JobInterface{
     public function run(){
         // Do your stuff.
     }
