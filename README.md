@@ -4,8 +4,7 @@
 
 1. Download CrontabBundle using composer
 2. Enable the Bundle
-3. Update your database schema
-4. Define crontabs in your config
+3. Define crontabs in your config
 
 ### Step 1: Download CrontabBundle using composer
 
@@ -32,17 +31,6 @@ public function registerBundles()
         new Crontab\CrontabBundle(),
     );
 }
-```
-
-### Step 3: Update your database schema
-
-Now that the bundle is configured, the last thing you need to do is update your
-database schema because you have added a new entity, the `Cron` class.
-
-Run the following command.
-
-``` bash
-$ php app/console doctrine:schema:update --force
 ```
 
 ### Step 4: Define crontabs in your config
