@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManager;
 
-use Crontab\Entity\Cron;
+use Cron\Entity\Cron;
 
 class RequestListener{
 

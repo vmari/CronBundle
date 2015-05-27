@@ -1,7 +1,7 @@
 {
-    "name": "valentinmari/crontab-bundle",
+    "name": "valentinmari/cron-bundle",
     "description": "Manage dynamically crons with requests in your PHP site.",
-    "keywords": ["crontab", "cron"],
+    "keywords": ["cron"],
     "type": "symfony-bundle",
     "require": {
         "symfony/symfony": "~2.6",
@@ -16,9 +16,7 @@
     ],
     "autoload" : {
         "psr-4" : {
-            "Crontab\\" : ""
+            "Cron\\" : ""
         }
-    },
-    "repositories" : [{
-    }]
+    }
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace Crontab\DependencyInjection;
+namespace Cron\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;    
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
 
-class CrontabExtension extends Extension{
+class CronExtension extends Extension{
     public function load(array $configs, ContainerBuilder $container){
         
         $configuration = new Configuration();

@@ -1,6 +1,6 @@
 <?php
 
-namespace Crontab;
+namespace Cron;
 
 interface JobInterface{
     public function run();
