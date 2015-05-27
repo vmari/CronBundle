@@ -39,16 +39,22 @@ class Cron{
 
     public function getLastRun(){
         $filename = $this->getFileCacheName();
-        if(!file_exists($filename)) return 0;
-        return intval(@file_get_contents($filename));
+        $date = new \DateTime();
+
+        if(!file_exists($filename)){
+            $date->setTimestamp(0);
+            return $date;
+        }
+        $date->setTimestamp(intval(@file_get_contents($filename)));
+        return $date;
     }
 
-    public function setLastRun($time){
-        file_put_contents($this->getFileCacheName(), $time);
+    public function setLastRun( \DateTime $time ){
+        file_put_contents($this->getFileCacheName(), $time->getTimestamp());
     }
 
     public function run(){
-        $now = time();
+        $now = new \DateTime('now');
 
         dump(array(
             'now'=> $now,
@@ -59,13 +65,13 @@ class Cron{
         if( $this->nextRun() <= $now ){
 
             $this->container->get($this->service)->run();
-            $this->setLastRun( $now );
+            $this->setLastRun($now);
         }
     }
 
     public function nextRun(){
         $cron = CronExpression::factory($this->format);
-        return $cron->getNextRunDate($this->getLastRun())->getTimestamp();
+        return $cron->getNextRunDate($this->getLastRun());
     }
 
 }
