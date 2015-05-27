@@ -1,17 +1,15 @@
-# WIP - This project don't have any stable version yet.
-
 ## Installation
 
-1. Download CrontabBundle using composer
+1. Download CronBundle using composer
 2. Enable the Bundle
-3. Define crontabs in your config
+3. Define crons in your config
 
-### Step 1: Download CrontabBundle using composer
+### Step 1: Download CronBundle using composer
 
-Add CrontabBundle by running the command:
+Add CronBundle by running the command:
 
 ``` bash
-$ php composer.phar require valentinmari/crontab-bundle "dev-master"
+$ php composer.phar require valentinmari/cron-bundle "dev-master"
 ```
 
 Composer will install the bundle to your project's `vendor/valentinmari` directory.
@@ -28,12 +26,12 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Crontab\CrontabBundle(),
+        new Cron\CronBundle(),
     );
 }
 ```
 
-### Step 4: Define crontabs in your config
+### Step 3: Define crons in your config
 
 Your site is ready to run crons. Now, write them in the `config.yml` file.
 It's recommended put all crons in a new file named `crontab.yml` in your config 
@@ -60,7 +58,7 @@ in your service too.
 ```php
 // AppBundle/Services/YourJob.php
 namespace AppBundle\Services;
-use Crontab\JobInterface;
+use Cron\JobInterface;
 
 class YourJob implements JobInterface{
     public function run(){
