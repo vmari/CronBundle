@@ -1,6 +1,6 @@
 <?php
 
-namespace Cron\Entity;
+namespace CronBundle\Entity;
 
 use Cron\CronExpression;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cron\DependencyInjection;
+namespace CronBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;    
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;

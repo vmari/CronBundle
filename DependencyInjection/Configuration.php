@@ -1,6 +1,6 @@
 <?php
 
-namespace Cron\DependencyInjection;
+namespace CronBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

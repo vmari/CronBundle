@@ -1,6 +1,6 @@
 <?php
 
-namespace Cron\Cache;
+namespace CronBundle\Cache;
 
 use Symfony\Component\HttpKernel\CacheClearer\CacheClearerInterface;
 

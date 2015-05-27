@@ -26,7 +26,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Cron\CronBundle(),
+        new CronBundle\CronBundle(),
     );
 }
 ```
@@ -58,7 +58,7 @@ in your service too.
 ```php
 // AppBundle/Services/YourJob.php
 namespace AppBundle\Services;
-use Cron\JobInterface;
+use CronBundle\JobInterface;
 
 class YourJob implements JobInterface{
     public function run(){
