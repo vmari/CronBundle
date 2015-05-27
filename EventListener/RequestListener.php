@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManager;
 
-use Crontab\Parser;
+use Crontab\Entity\Cron;
 
 class RequestListener{
 
@@ -19,20 +19,19 @@ class RequestListener{
     }
     
     public function onKernelRequest(GetResponseEvent $event){
-        $crons = $this->container->getParameter('crontab');
-        if (!count($crons)) return;
 
         $lockHandler = new LockHandler('crontab.lock');
-        
+
         if (!$lockHandler->lock()) return;
+        
+        $crons = $this->container->getParameter('crontab');
 
         foreach( $crons as $cron ){
-            
-            $timestamp = Parser::parse($cron['format']); //TODO: Fetch last time executued
-            
-            if( $timestamp <= time() )
-                $this->container->get($cron['service'])->run();
+
+            $service = $this->container->get($cron['service']);
+            $job = new Cron( $cron['format'], $cron['service'], $this->container );
+            $job->run();
         }
-        //$event->setResponse(new Response($response));
     }
+
 }
