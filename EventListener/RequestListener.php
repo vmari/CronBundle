@@ -20,11 +20,11 @@ class RequestListener{
     
     public function onKernelRequest(GetResponseEvent $event){
 
-        $lockHandler = new LockHandler('crontab.lock');
+        $lockHandler = new LockHandler('cron.lock');
 
         if (!$lockHandler->lock()) return;
         
-        $crons = $this->container->getParameter('crontab');
+        $crons = $this->container->getParameter('cron');
 
         foreach( $crons as $cron ){
 

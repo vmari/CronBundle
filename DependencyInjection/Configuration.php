@@ -10,7 +10,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('crontab');
+        $rootNode = $treeBuilder->root('cron');
 
         $rootNode
             ->prototype('array')

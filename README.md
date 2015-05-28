@@ -34,18 +34,18 @@ public function registerBundles()
 ### Step 3: Define crons in your config
 
 Your site is ready to run crons. Now, write them in the `config.yml` file.
-It's recommended put all crons in a new file named `crontab.yml` in your config 
+It's recommended put all crons in a new file named `cron.yml` in your config 
 folder.
 
 ```yaml
 #app/config.yml
 imports:
     # ...
-    - { resource: crontab.yml }
+    - { resource: cron.yml }
 ```
 ```yaml
-#app/crontab.yml
-crontab:
+#app/cron.yml
+cron:
     - { format: '*/1 * * * *', service: test_job }
     - { format: '*/1 * * * *', service: test_job }
 ```

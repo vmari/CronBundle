@@ -24,7 +24,7 @@ class Cron{
     private function getRoot(){
         $env = $this->container->get('kernel')->getEnvironment();
 
-        $dirname = '../app/cache/'.$env.'/crontab';
+        $dirname = '../app/cache/'.$env.'/cron';
 
         if (!is_dir($dirname))
         {
