@@ -1,6 +1,6 @@
 <?php
 
-namespace CronBundle;
+namespace VM\Cron;
 
 interface JobInterface{
     public function run();

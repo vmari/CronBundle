@@ -1,6 +1,6 @@
 <?php
 
-namespace CronBundle\Cron\EventListener;
+namespace VM\Cron\EventListener;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Filesystem\LockHandler;
@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManager;
 
-use CronBundle\Entity\Cron;
+use VM\Cron\Entity\Cron;
 
 class RequestListener{
 
