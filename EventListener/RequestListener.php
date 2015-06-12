@@ -4,7 +4,7 @@ namespace VM\Cron\EventListener;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Filesystem\LockHandler;
-use Symfony\Component\HttpKernel\Event\GetResponseEvent;
+use Symfony\Component\HttpKernel\Event\PostResponseEvent;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\ORM\EntityManager;
 
@@ -18,7 +18,7 @@ class RequestListener{
         $this->container = $container;
     }
     
-    public function onKernelRequest(GetResponseEvent $event){
+    public function onKernelTerminate(PostResponseEvent $event){
 
         $lockHandler = new LockHandler('cron.lock');
 
